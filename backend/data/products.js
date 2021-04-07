@@ -72,7 +72,7 @@ const products = [
     numReviews: 0,
   },
   {
-    name: 'Food 6',
+    name: 'Food 7',
     image: '/images/food5.jpg',
     description:
       'description_description_description',
@@ -84,7 +84,7 @@ const products = [
     numReviews: 0,
   },
   {
-    name: 'Food 6',
+    name: 'Food 8',
     image: '/images/food3.jpg',
     description:
       'description_description_description',
@@ -96,7 +96,7 @@ const products = [
     numReviews: 0,
   },
   {
-    name: 'Food 6',
+    name: 'Food 9',
     image: '/images/food4.jpg',
     description:
       'description_description_description',
@@ -108,7 +108,7 @@ const products = [
     numReviews: 0,
   },
   {
-    name: 'Food 6',
+    name: 'Food 10',
     image: '/images/food4.jpg',
     description:
       'description_description_description',
@@ -120,7 +120,7 @@ const products = [
     numReviews: 0,
   },
   {
-    name: 'Food 6',
+    name: 'Food 11',
     image: '/images/food4.jpg',
     description:
       'description_description_description',
@@ -132,7 +132,7 @@ const products = [
     numReviews: 0,
   },
   {
-    name: 'Food 6',
+    name: 'Food 12',
     image: '/images/food4.jpg',
     description:
       'description_description_description',
@@ -144,7 +144,7 @@ const products = [
     numReviews: 0,
   },
   {
-    name: 'Food 6',
+    name: 'Food 13',
     image: '/images/food4.jpg',
     description:
       'description_description_description',
@@ -156,7 +156,7 @@ const products = [
     numReviews: 0,
   },
   {
-    name: 'Food 6',
+    name: 'Food 14',
     image: '/images/food4.jpg',
     description:
       'description_description_description',
@@ -168,7 +168,7 @@ const products = [
     numReviews: 0,
   },
   {
-    name: 'Food 6',
+    name: 'Food 15',
     image: '/images/food4.jpg',
     description:
       'description_description_description',
