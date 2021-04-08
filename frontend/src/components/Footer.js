@@ -19,9 +19,9 @@ const Footer = () => {
             <Row className='pt-3'> <h4 className="text-light">SOCIAL NETWORK</h4></Row>
             <Row>
               <Col className='p-1 col-sm-1 col-md-2'><a href='https://www.fb.com/' target='_blank' rel='noreferrer noopener' ><Image responsive src="/fb.png" alt="logo" width="35px" height="35px" /></a></Col>
-              <Col className='p-1 col-sm-1 col-md-2'><a href='https://www.instagram.com/' target='_blank'><Image responsive src="/ins.png" alt="logo" width="35px" height="35px" /></a></Col>
-              <Col className='p-1 col-sm-1 col-md-2'><a href='https://www.youtube.com/' target='_blank'><Image responsive src="/yt.png" alt="logo" width="35px" height="35px" /></a></Col>
-              <Col className='p-1 col-sm-1 col-md-2'><a href='https://www.twitter.com/' target='_blank'><Image responsive src="/tw.png" alt="logo" width="35" height="35px" /></a></Col>
+              <Col className='p-1 col-sm-1 col-md-2'><a href='https://www.instagram.com/' target='_blank' rel='noreferrer'><Image responsive src="/ins.png" alt="logo" width="35px" height="35px" /></a></Col>
+              <Col className='p-1 col-sm-1 col-md-2'><a href='https://www.youtube.com/' target='_blank' rel='noreferrer'><Image responsive src="/yt.png" alt="logo" width="35px" height="35px" /></a></Col>
+              <Col className='p-1 col-sm-1 col-md-2'><a href='https://www.twitter.com/' target='_blank' rel='noreferrer'><Image responsive src="/tw.png" alt="logo" width="35" height="35px" /></a></Col>
             </Row>
           </Col>
           <Col className='col-md-4 col-sm-12 col-auto'>
