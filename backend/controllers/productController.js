@@ -22,7 +22,7 @@ const getProducts = asyncHandler(async (req, res) => {
   const products = await Product.find({ ...keyword })
     .limit(pageSize)
     .skip(pageSize * (page - 1))
-
+    
   res.json({ products, page, pages: Math.ceil(count / pageSize) })
 })
 
@@ -36,7 +36,7 @@ const getProductById = asyncHandler(async (req, res) => {
     res.json(product)
   } else {
     res.status(404)
-    throw new Error('Product not found')
+    throw new Error('Không tìm thấy sản phẩm')
   }
 })
 
@@ -61,7 +61,7 @@ const getRelatedProducts = asyncHandler(async (req, res) => {
     res.json(products)
   } else {
     res.status(404)
-    throw new Error('Products not found')
+    throw new Error('Không tìm thấy sản phẩm')
   }
 })
 
@@ -73,10 +73,10 @@ const deleteProduct = asyncHandler(async (req, res) => {
 
   if (product) {
     await product.remove()
-    res.json({ message: 'Product removed' })
+    res.json({ message: 'Đã xóa sản phẩm' })
   } else {
     res.status(404)
-    throw new Error('Product not found')
+    throw new Error('Không tìm thấy sản phẩm')
   }
 })
 
@@ -129,7 +129,7 @@ const updateProduct = asyncHandler(async (req, res) => {
     res.json(updatedProduct)
   } else {
     res.status(404)
-    throw new Error('Product not found')
+    throw new Error('Không tìm thấy sản phẩm')
   }
 })
 
@@ -167,10 +167,10 @@ const createProductReview = asyncHandler(async (req, res) => {
       product.reviews.length
 
     await product.save()
-    res.status(201).json({ message: 'Review added' })
+    res.status(201).json({ message: 'Đã thêm đánh giá' })
   } else {
     res.status(404)
-    throw new Error('Product not found')
+    throw new Error('Product already reviewed')
   }
 })
 

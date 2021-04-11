@@ -62,7 +62,7 @@ const ProductScreen = ({ history, match }) => {
   return (
     <>
       <Link className='btn btn-light my-3' to='/'>
-        Go Back
+        Trở lại
       </Link>
       {loading ? (
         <Loader />
@@ -83,12 +83,13 @@ const ProductScreen = ({ history, match }) => {
                     <ListGroup.Item>
                       <Rating
                         value={product.rating}
-                        text={`${product.numReviews} reviews`}
+                        text={`${product.numReviews} đánh giá`}
                       />
                     </ListGroup.Item>
-                    <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
+                    <ListGroup.Item>Giá: {product.price}đ</ListGroup.Item>
+                    <ListGroup.Item>Hãng: {product.brand}</ListGroup.Item>
                     <ListGroup.Item>
-                      Description: {product.description}
+                      Mô tả: {product.description}
                     </ListGroup.Item>
                   </ListGroup>
                 </Col>
@@ -97,7 +98,7 @@ const ProductScreen = ({ history, match }) => {
                     <ListGroup variant='flush'>
                       <ListGroup.Item>
                         <Row>
-                          <Col>Price:</Col>
+                          <Col>Giá:</Col>
                           <Col>
                             <strong>${product.price}</strong>
                           </Col>
@@ -106,9 +107,9 @@ const ProductScreen = ({ history, match }) => {
 
                       <ListGroup.Item>
                         <Row>
-                          <Col>Status:</Col>
+                          <Col>Trạng thái:</Col>
                           <Col>
-                            {product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
+                            {product.countInStock > 0 ? 'Trong kho' : 'Hết hàng'}
                           </Col>
                         </Row>
                       </ListGroup.Item>
@@ -116,7 +117,7 @@ const ProductScreen = ({ history, match }) => {
                       {product.countInStock > 0 && (
                         <ListGroup.Item>
                           <Row>
-                            <Col>Qty</Col>
+                            <Col className='mt-2'>Số lượng</Col>
                             <Col>
                               <Form.Control
                                 as='select'
@@ -143,7 +144,7 @@ const ProductScreen = ({ history, match }) => {
                           type='button'
                           disabled={product.countInStock === 0}
                         >
-                          Add To Cart
+                          Thêm vào giỏ hàng
                     </Button>
                       </ListGroup.Item>
                     </ListGroup>
@@ -152,8 +153,8 @@ const ProductScreen = ({ history, match }) => {
               </Row>
               <Row>
                 <Col md={6}>
-                  <h2>Reviews</h2>
-                  {product.reviews.length === 0 && <Message>No Reviews</Message>}
+                  <h2>Đánh giá</h2>
+                  {product.reviews.length === 0 && <Message>Không có đánh giá</Message>}
                   <ListGroup variant='flush'>
                     {product.reviews.map((review) => (
                       <ListGroup.Item key={review._id}>
@@ -164,10 +165,10 @@ const ProductScreen = ({ history, match }) => {
                       </ListGroup.Item>
                     ))}
                     <ListGroup.Item>
-                      <h2>Write a Customer Review</h2>
+                      <h2>Viết đánh giá của khách hàng</h2>
                       {successProductReview && (
                         <Message variant='success'>
-                          Review submitted successfully
+                          Bài đánh giá đã được gửi thành công
                         </Message>
                       )}
                       {loadingProductReview && <Loader />}
@@ -177,22 +178,22 @@ const ProductScreen = ({ history, match }) => {
                       {userInfo ? (
                         <Form onSubmit={submitHandler}>
                           <Form.Group controlId='rating'>
-                            <Form.Label>Rating</Form.Label>
+                            <Form.Label>Xếp hạng</Form.Label>
                             <Form.Control
                               as='select'
                               value={rating}
                               onChange={(e) => setRating(e.target.value)}
                             >
-                              <option value=''>Select...</option>
-                              <option value='1'>1 - Poor</option>
-                              <option value='2'>2 - Fair</option>
-                              <option value='3'>3 - Good</option>
-                              <option value='4'>4 - Very Good</option>
-                              <option value='5'>5 - Excellent</option>
+                              <option value=''>Chọn hạng...</option>
+                              <option value='1'>☆ - Rất không hài lòng</option>
+                              <option value='2'>☆☆ - Không hài lòng</option>
+                              <option value='3'>☆☆☆ - Bình thường</option>
+                              <option value='4'>☆☆☆☆ - Hài lòng</option>
+                              <option value='5'>☆☆☆☆☆ - Cực kì hài lòng</option>
                             </Form.Control>
                           </Form.Group>
                           <Form.Group controlId='comment'>
-                            <Form.Label>Comment</Form.Label>
+                            <Form.Label>Hãy chia sẻ cảm nhận của bạn về sản phẩm này nhé.</Form.Label>
                             <Form.Control
                               as='textarea'
                               row='3'
@@ -205,12 +206,12 @@ const ProductScreen = ({ history, match }) => {
                             type='submit'
                             variant='primary'
                           >
-                            Submit
+                            Gửi
                       </Button>
                         </Form>
                       ) : (
                           <Message>
-                            Please <Link to='/login'>sign in</Link> to write a review{' '}
+                            Vui lòng <Link to='/login'>đăng nhập</Link> để viết đấnh giá{' '}
                           </Message>
                         )}
                     </ListGroup.Item>

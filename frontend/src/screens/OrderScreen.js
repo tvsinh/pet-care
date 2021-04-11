@@ -27,7 +27,9 @@ const OrderScreen = ({ match, history }) => {
   const { order, loading, error } = orderDetails
 
   const orderPay = useSelector((state) => state.orderPay)
-  const { loading: loadingPay, success: successPay } = orderPay
+
+  // const { loading: loadingPay, success: successPay } = orderPay
+  const { success: successPay } = orderPay
 
   const orderDeliver = useSelector((state) => state.orderDeliver)
   const { loading: loadingDeliver, success: successDeliver } = orderDeliver
@@ -77,10 +79,10 @@ const OrderScreen = ({ match, history }) => {
     }
   }, [dispatch, orderId, successPay, successDeliver, order])
 
-  const successPaymentHandler = (paymentResult) => {
-    console.log(paymentResult)
-    dispatch(payOrder(orderId, paymentResult))
-  }
+  // const successPaymentHandler = (paymentResult) => {
+  //   console.log(paymentResult)
+  //   dispatch(payOrder(orderId, paymentResult))
+  // }
 
   const deliverHandler = () => {
     dispatch(deliverOrder(order))
@@ -97,7 +99,7 @@ const OrderScreen = ({ match, history }) => {
         <Col md={8}>
           <ListGroup variant='flush'>
             <ListGroup.Item>
-              <h2>Shipping</h2>
+              <h2>Vận chuyển</h2>
               <p>
                 <strong>Name: </strong> {order.user.name}
               </p>
@@ -106,10 +108,11 @@ const OrderScreen = ({ match, history }) => {
                 <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
               </p>
               <p>
-                <strong>Address:</strong>
+                <strong>Địa chỉ:</strong>
                 {order.shippingAddress.address}, {order.shippingAddress.city}{' '}
-                {order.shippingAddress.postalCode},{' '}
-                {order.shippingAddress.country}
+                {order.shippingAddress.postalCode}
+                {/* {order.shippingAddress.postalCode},{' '}
+                {order.shippingAddress.country} */}
               </p>
               {order.isDelivered ? (
                 <Message variant='success'>
@@ -121,7 +124,7 @@ const OrderScreen = ({ match, history }) => {
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Payment Method</h2>
+              <h2>Phương thức thanh toán</h2>
               <p>
                 <strong>Method: </strong>
                 {order.paymentMethod}
@@ -192,7 +195,7 @@ const OrderScreen = ({ match, history }) => {
               </ListGroup.Item> */}
               <ListGroup.Item>
                 <Row>
-                  <Col>Total</Col>
+                  <Col>Tổng</Col>
                   <Col>${order.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
