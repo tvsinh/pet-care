@@ -26,7 +26,7 @@ const PlaceOrderScreen = ({ history }) => {
   cart.itemsPrice = addDecimals(
     cart.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0)
   )
-  cart.shippingPrice = addDecimals(cart.itemsPrice > 100 ? 0 : 20)
+  cart.shippingPrice = addDecimals(cart.itemsPrice > 100000 ? 0 : 30000)
   // cart.taxPrice = addDecimals(Number((0.15 * cart.itemsPrice).toFixed(2)))
   cart.totalPrice = (
     Number(cart.itemsPrice) +
@@ -106,7 +106,7 @@ const PlaceOrderScreen = ({ history }) => {
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} x {item.price}đ = {item.qty * item.price}đ
+                          {item.qty} x {item.price}đ = {(item.qty * item.price).toFixed(2)}đ
                         </Col>
                       </Row>
                     </ListGroup.Item>

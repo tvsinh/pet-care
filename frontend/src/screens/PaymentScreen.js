@@ -13,7 +13,7 @@ const PaymentScreen = ({ history }) => {
     history.push('/shipping')
   }
 
-  const [paymentMethod, setPaymentMethod] = useState('Payment on delivery')
+  const [paymentMethod, setPaymentMethod] = useState('Thanh toán khi nhận hàng')
 
   const dispatch = useDispatch()
 
@@ -33,19 +33,19 @@ const PaymentScreen = ({ history }) => {
           <Col>
           <Form.Check
               type='radio'
-              label='Thanh toán khi giao hàng'
+              label='Thanh toán khi nhận hàng'
               id='Ondelivery'
               name='paymentMethod'
-              value='Thanh toán khi giao hàng'
+              value='Thanh toán khi nhận hàng'
               checked
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></Form.Check>
             <Form.Check
               type='radio'
-              label='Chuyển khoản'
+              label='Chuyển khoản qua thẻ'
               id='Banking'
               name='paymentMethod'
-              value='Chuyển khoản'
+              value='Chuyển khoản qua thẻ'
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></Form.Check>
             {/* <Form.Check

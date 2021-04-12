@@ -107,7 +107,7 @@ const ProfileScreen = ({ location, history }) => {
             </Form.Group>
 
             <Button type='submit' variant='primary'>
-              Update
+              Cập nhật
             </Button>
           </Form>
         )}
@@ -125,8 +125,8 @@ const ProfileScreen = ({ location, history }) => {
                 <th>ID</th>
                 <th>Ngày</th>
                 <th>Tổng</th>
-                <th>Đã thanh toán</th>
-                <th>Đã giao hàng</th>
+                <th>Thanh toán</th>
+                <th>Giao hàng</th>
                 <th></th>
               </tr>
             </thead>

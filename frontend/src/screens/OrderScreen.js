@@ -19,7 +19,7 @@ import {
 const OrderScreen = ({ match, history }) => {
   const orderId = match.params.id
 
-  const [sdkReady, setSdkReady] = useState(false)
+  // const [sdkReady, setSdkReady] = useState(false)
 
   const dispatch = useDispatch()
 
@@ -75,7 +75,7 @@ const OrderScreen = ({ match, history }) => {
       // } else {
       //   setSdkReady(true)
       // }
-      setSdkReady(true)
+      // setSdkReady(true)
     }
   }, [dispatch, orderId, successPay, successDeliver, order])
 
@@ -108,38 +108,38 @@ const OrderScreen = ({ match, history }) => {
                 <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
               </p>
               <p>
-                <strong>Địa chỉ:</strong>
+                <strong>Địa chỉ: </strong>
                 {order.shippingAddress.address}, {order.shippingAddress.city}{' '}
                 {order.shippingAddress.postalCode}
                 {/* {order.shippingAddress.postalCode},{' '}
                 {order.shippingAddress.country} */}
               </p>
-              {order.isDelivered ? (
+              {/* {order.isDelivered ? (
                 <Message variant='success'>
                   Delivered on {order.deliveredAt}
                 </Message>
               ) : (
                 <Message variant='danger'>Not Delivered</Message>
-              )}
+              )} */}
             </ListGroup.Item>
 
             <ListGroup.Item>
               <h2>Phương thức thanh toán</h2>
               <p>
-                <strong>Method: </strong>
+                <strong>Phương thức: </strong>
                 {order.paymentMethod}
               </p>
-              {order.isPaid ? (
+              {/* {order.isPaid ? (
                 <Message variant='success'>Paid on {order.paidAt}</Message>
               ) : (
                 <Message variant='danger'>Not Paid</Message>
-              )}
+              )} */}
             </ListGroup.Item>
 
             <ListGroup.Item>
-              <h2>Order Items</h2>
+              <h2>Danh mục hàng</h2>
               {order.orderItems.length === 0 ? (
-                <Message>Order is empty</Message>
+                <Message>Đơn hàng trống</Message>
               ) : (
                 <ListGroup variant='flush'>
                   {order.orderItems.map((item, index) => (
@@ -159,7 +159,7 @@ const OrderScreen = ({ match, history }) => {
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} x ${item.price} = ${item.qty * item.price}
+                          {item.qty} x {item.price}đ = {(item.qty * item.price).toFixed(2)}đ
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -173,18 +173,18 @@ const OrderScreen = ({ match, history }) => {
           <Card>
             <ListGroup variant='flush'>
               <ListGroup.Item>
-                <h2>Order Summary</h2>
+                <h2>Chi tiết đơn hàng</h2>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Items</Col>
-                  <Col>${order.itemsPrice}</Col>
+                  <Col>Sản phẩm</Col>
+                  <Col>{order.itemsPrice}đ</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Shipping</Col>
-                  <Col>${order.shippingPrice}</Col>
+                  <Col>Phí giao hàng</Col>
+                  <Col>{(order.shippingPrice).toFixed(2)}đ</Col>
                 </Row>
               </ListGroup.Item>
               {/* <ListGroup.Item>
@@ -196,7 +196,7 @@ const OrderScreen = ({ match, history }) => {
               <ListGroup.Item>
                 <Row>
                   <Col>Tổng</Col>
-                  <Col>${order.totalPrice}</Col>
+                  <Col>{(order.totalPrice).toFixed(2)}đ</Col>
                 </Row>
               </ListGroup.Item>
               {/* {!order.isPaid && (

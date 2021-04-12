@@ -9,7 +9,7 @@ const Footer = () => {
           <Col className='py-3 col-md-4 col-sm-12 col-auto'>
             <Row className='py-2'><Image responsive src="/Logo-care.png" alt="logo" width="150px" height="35px"/></Row>
             <Row className='fas fa-map-signs text-muted p-2'>&nbsp;789 Ton Duc Thang, Da Nang</Row>
-            <Row className='fas fa-phone-alt text-muted p-2'>&nbsp;0789.888.999</Row>
+            <Row className='fas fa-phone-alt text-muted p-2'>&nbsp;0789.789.789</Row>
             <Row className='far fa-envelope text-muted p-2'>&nbsp;Petcare.shop@gmail.com</Row>
             <Row className='fab fa-weebly text-muted p-2'>&nbsp;www.petcare.com</Row>
 
@@ -19,10 +19,10 @@ const Footer = () => {
             <Row className='pt-3'> <h5 className="text-light">KẾT NỐI VỚI CHÚNG TÔI</h5></Row>
             <Row>
               {/* <Col>&nbsp;</Col> */}
-              <Col className='p-1 col-sm-1 col-md-2'><a href='https://www.fb.com/tvs.07' target='_blank' rel='noreferrer noopener' >&nbsp;<Image responsive src="/fb.png" alt="logo" width="35px" height="35px" /></a></Col>
-              <Col className='p-1 col-sm-1 col-md-2'><a href='https://www.instagram.com/' target='_blank' rel='noreferrer'>&nbsp;<Image responsive src="/ins.png" alt="logo" width="35px" height="35px" /></a></Col>
-              <Col className='p-1 col-sm-1 col-md-2'><a href='https://www.youtube.com/' target='_blank' rel='noreferrer'>&nbsp;<Image responsive src="/yt.png" alt="logo" width="35px" height="35px" /></a></Col>
-              <Col className='p-1 col-sm-1 col-md-2'><a href='https://www.twitter.com/' target='_blank' rel='noreferrer'>&nbsp;<Image responsive src="/tw.png" alt="logo" width="35" height="35px" /></a></Col>
+              <Col className='p-1 col-sm-1 col-md-2'><a href='https://www.fb.com/tvs.07' target='_blank' rel='noreferrer noopener' ><Image responsive src="/fb.png" alt="logo" width="35px" height="35px" /></a></Col>
+              <Col className='p-1 col-sm-1 col-md-2'><a href='https://www.instagram.com/' target='_blank' rel='noreferrer'><Image responsive src="/ins.png" alt="logo" width="35px" height="35px" /></a></Col>
+              <Col className='p-1 col-sm-1 col-md-2'><a href='https://www.youtube.com/' target='_blank' rel='noreferrer'><Image responsive src="/yt.png" alt="logo" width="35px" height="35px" /></a></Col>
+              <Col className='p-1 col-sm-1 col-md-2'><a href='https://www.twitter.com/' target='_blank' rel='noreferrer'><Image responsive src="/tw.png" alt="logo" width="35" height="35px" /></a></Col>
             </Row>
           </Col>
           <Col className='col-md-4 col-sm-12 col-auto'>
