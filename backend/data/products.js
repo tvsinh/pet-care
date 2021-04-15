@@ -7,7 +7,7 @@ const products = [
     brand: 'Nội địa',
     category: 'Thức ăn',
     price: 75000,
-    countInStock: 5,
+    countInStock: 100,
     rating: 0,
     numReviews: 0,
   },

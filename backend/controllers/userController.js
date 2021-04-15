@@ -20,7 +20,7 @@ const authUser = asyncHandler(async (req, res) => {
     })
   } else {
     res.status(401)
-    throw new Error('Invalid email or password')
+    throw new Error('Email hoặc mật khẩu không hợp lệ')
   }
 })
 
@@ -53,7 +53,7 @@ const registerUser = asyncHandler(async (req, res) => {
     })
   } else {
     res.status(400)
-    throw new Error('Invalid user data')
+    throw new Error('Dữ liệu người dùng không hợp lệ')
   }
 })
 
@@ -72,7 +72,7 @@ const getUserProfile = asyncHandler(async (req, res) => {
     })
   } else {
     res.status(404)
-    throw new Error('User not found')
+    throw new Error('Không tìm thấy người dùng')
   }
 })
 
@@ -100,7 +100,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
     })
   } else {
     res.status(404)
-    throw new Error('User not found')
+    throw new Error('Không tìm thấy người dùng')
   }
 })
 
@@ -120,10 +120,10 @@ const deleteUser = asyncHandler(async (req, res) => {
 
   if (user) {
     await user.remove()
-    res.json({ message: 'User removed' })
+    res.json({ message: 'Người dùng đã bị xóa' })
   } else {
     res.status(404)
-    throw new Error('User not found')
+    throw new Error('Không tìm thấy người dùng')
   }
 })
 
