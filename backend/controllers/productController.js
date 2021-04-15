@@ -170,7 +170,7 @@ const createProductReview = asyncHandler(async (req, res) => {
     res.status(201).json({ message: 'Đã thêm đánh giá' })
   } else {
     res.status(404)
-    throw new Error('Product already reviewed')
+    throw new Error('Bạn đã thêm đánh giá cho sản phẩm này')
   }
 })
 

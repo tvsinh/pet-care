@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React, { useEffect } from 'react'
+// import axios from 'axios'
 // import { PayPalButton } from 'react-paypal-button-v2'
 import { Link } from 'react-router-dom'
 import { Row, Col, ListGroup, Image, Card, Button } from 'react-bootstrap'
@@ -8,7 +8,7 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import {
   getOrderDetails,
-  payOrder,
+  // payOrder,
   deliverOrder,
 } from '../actions/orderActions'
 import {
@@ -94,7 +94,7 @@ const OrderScreen = ({ match, history }) => {
     <Message variant='danger'>{error}</Message>
   ) : (
     <>
-      <h1>Order {order._id}</h1>
+      <h1>ĐƠN HÀNG {order._id}</h1>
       <Row>
         <Col md={8}>
           <ListGroup variant='flush'>
@@ -223,7 +223,7 @@ const OrderScreen = ({ match, history }) => {
                       className='btn btn-block'
                       onClick={deliverHandler}
                     >
-                      Mark As Delivered
+                      Đánh dấu là đã giao
                     </Button>
                   </ListGroup.Item>
                 )}

@@ -109,7 +109,7 @@ const ProductScreen = ({ history, match }) => {
                         <Row>
                           <Col>Trạng thái:</Col>
                           <Col>
-                            {product.countInStock > 0 ? 'Trong kho' : 'Hết hàng'}
+                            {product.countInStock > 0 ? 'Còn hàng' : 'Hết hàng'}
                           </Col>
                         </Row>
                       </ListGroup.Item>

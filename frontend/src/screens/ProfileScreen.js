@@ -47,7 +47,7 @@ const ProfileScreen = ({ location, history }) => {
   const submitHandler = (e) => {
     e.preventDefault()
     if (password !== confirmPassword) {
-      setMessage('Passwords do not match')
+      setMessage('Mật khẩu không hợp lệ.')
     } else {
       dispatch(updateUserProfile({ id: user._id, name, email, password }))
     }

@@ -34,7 +34,7 @@ const UserListScreen = ({ history }) => {
 
   return (
     <>
-      <h1>Users</h1>
+      <h1>DANH SÁCH THÀNH VIÊN</h1>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -44,9 +44,9 @@ const UserListScreen = ({ history }) => {
           <thead>
             <tr>
               <th>ID</th>
-              <th>NAME</th>
+              <th>TÊN</th>
               <th>EMAIL</th>
-              <th>ADMIN</th>
+              <th>QUẢN TRỊ VIÊN</th>
               <th></th>
             </tr>
           </thead>
