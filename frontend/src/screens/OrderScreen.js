@@ -9,7 +9,7 @@ import Loader from '../components/Loader'
 import {
   getOrderDetails,
   // payOrder,
-  deliverOrder,
+  confirmOrder,
 } from '../actions/orderActions'
 import {
   ORDER_PAY_RESET,
@@ -32,8 +32,8 @@ const OrderScreen = ({ match, history }) => {
   const { success: successPay } = orderPay
 
   const orderDeliver = useSelector((state) => state.orderDeliver)
-  const { loading: loadingDeliver, success: successDeliver } = orderDeliver
-
+  // const { loading: loadingDeliver, success: successDeliver } = orderDeliver
+  const { success: successDeliver } = orderDeliver
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
 
@@ -49,8 +49,8 @@ const OrderScreen = ({ match, history }) => {
   }
 
   useEffect(() => {
-    if (!userInfo) {
-      history.push('/login')
+    if (!'userInfo') {
+      'history'.push('/login')
     }
 
     // const addPayPalScript = async () => {
@@ -85,7 +85,7 @@ const OrderScreen = ({ match, history }) => {
   // }
 
   const deliverHandler = () => {
-    dispatch(deliverOrder(order))
+    dispatch(confirmOrder(order))
   }
 
   return loading ? (
@@ -159,7 +159,7 @@ const OrderScreen = ({ match, history }) => {
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} x {item.price}đ = {(item.qty * item.price).toFixed(2)}đ
+                          {item.qty} x {item.price}₫ = {(item.qty * item.price).toFixed(2)}₫
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -178,13 +178,13 @@ const OrderScreen = ({ match, history }) => {
               <ListGroup.Item>
                 <Row>
                   <Col>Sản phẩm</Col>
-                  <Col>{order.itemsPrice}đ</Col>
+                  <Col>{order.itemsPrice}₫</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Phí giao hàng</Col>
-                  <Col>{(order.shippingPrice).toFixed(2)}đ</Col>
+                  <Col>{(order.shippingPrice).toFixed(2)}₫</Col>
                 </Row>
               </ListGroup.Item>
               {/* <ListGroup.Item>
@@ -196,7 +196,7 @@ const OrderScreen = ({ match, history }) => {
               <ListGroup.Item>
                 <Row>
                   <Col>Tổng</Col>
-                  <Col>{(order.totalPrice).toFixed(2)}đ</Col>
+                  <Col>{(order.totalPrice).toFixed(2)}₫</Col>
                 </Row>
               </ListGroup.Item>
               {/* {!order.isPaid && (
@@ -212,18 +212,16 @@ const OrderScreen = ({ match, history }) => {
                   )}
                 </ListGroup.Item>
               )} */}
-              {loadingDeliver && <Loader />}
+              {/* {loadingDeliver && <Loader />} */}
               {userInfo &&
-                userInfo.isAdmin &&
-                order.isPaid &&
-                !order.isDelivered && (
+                userInfo.isAdmin &&(
                   <ListGroup.Item>
                     <Button
                       type='button'
                       className='btn btn-block'
                       onClick={deliverHandler}
                     >
-                      Đánh dấu là đã giao
+                      Xác nhận đơn hàng
                     </Button>
                   </ListGroup.Item>
                 )}

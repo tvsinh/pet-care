@@ -23,7 +23,7 @@ const Product = ({ product }) => {
             text={`${product.numReviews} đánh giá`}
           />
         </Card.Text>
-        <Card.Text as='h3' className='text-lowercase'>{product.price}đ</Card.Text>
+        <Card.Text as='h3' className='text-lowercase'>{product.price}₫</Card.Text>
       </Card.Body>
     </Card>
   )

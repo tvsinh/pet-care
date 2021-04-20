@@ -8,7 +8,7 @@ import {
   updateProduct,
   createProductReview,
   getTopProducts,
-  getRelatedProducts
+  // getRelatedProducts
 } from '../controllers/productController.js'
 import { protect, admin } from '../middleware/authMiddleware.js'
 
@@ -20,7 +20,7 @@ router
   .get(getProductById)
   .delete(protect, admin, deleteProduct)
   .put(protect, admin, updateProduct)
-router.route('/:id/recommend')
-  .get(getRelatedProducts)
+// router.route('/:id/recommend')
+//   .get(getRelatedProducts)
 
 export default router

@@ -22,6 +22,10 @@ import {
 } from '../constants/orderConstants'
 import { logout } from './userActions'
 
+export const confirmOrder = (order) => async (dispatch, getState) => {
+
+}
+
 export const createOrder = (order) => async (dispatch, getState) => {
   try {
     dispatch({

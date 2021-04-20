@@ -12,7 +12,7 @@ import {
   createProductReview,
 } from '../actions/productActions'
 import { PRODUCT_CREATE_REVIEW_RESET } from '../constants/productConstants'
-import { ProductsRelated } from './ProductRelated'
+
 
 const ProductScreen = ({ history, match }) => {
   const [qty, setQty] = useState(1)
@@ -86,7 +86,7 @@ const ProductScreen = ({ history, match }) => {
                         text={`${product.numReviews} đánh giá`}
                       />
                     </ListGroup.Item>
-                    <ListGroup.Item>Giá: {product.price}đ</ListGroup.Item>
+                    <ListGroup.Item>Giá: {product.price}₫</ListGroup.Item>
                     <ListGroup.Item>Hãng: {product.brand}</ListGroup.Item>
                     <ListGroup.Item>
                       Mô tả: {product.description}
@@ -100,7 +100,7 @@ const ProductScreen = ({ history, match }) => {
                         <Row>
                           <Col>Giá:</Col>
                           <Col>
-                            <strong>{product.price}đ</strong>
+                            <strong>{product.price}₫</strong>
                           </Col>
                         </Row>
                       </ListGroup.Item>
@@ -211,14 +211,13 @@ const ProductScreen = ({ history, match }) => {
                         </Form>
                       ) : (
                           <Message>
-                            Vui lòng <Link to='/login'>đăng nhập</Link> để viết đấnh giá{' '}
+                            Vui lòng <Link to='/login'>đăng nhập</Link> để viết đánh giá{' '}
                           </Message>
                         )}
                     </ListGroup.Item>
                   </ListGroup>
                 </Col>
               </Row>
-              <ProductsRelated id={product._id} />
             </>
           )}
     </>

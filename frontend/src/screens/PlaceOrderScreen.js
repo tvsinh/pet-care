@@ -8,6 +8,7 @@ import { createOrder } from '../actions/orderActions'
 import { ORDER_CREATE_RESET } from '../constants/orderConstants'
 import { USER_DETAILS_RESET } from '../constants/userConstants'
 
+
 const PlaceOrderScreen = ({ history }) => {
   const dispatch = useDispatch()
 
@@ -54,7 +55,6 @@ const PlaceOrderScreen = ({ history }) => {
         paymentMethod: cart.paymentMethod,
         itemsPrice: cart.itemsPrice,
         shippingPrice: cart.shippingPrice,
-        // taxPrice: cart.taxPrice,
         totalPrice: cart.totalPrice,
       })
     )
@@ -106,7 +106,7 @@ const PlaceOrderScreen = ({ history }) => {
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} x {item.price}đ = {(item.qty * item.price).toFixed(2)}đ
+                          {item.qty} x {item.price}₫ = {(item.qty * item.price).toFixed(2)}₫
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -125,13 +125,13 @@ const PlaceOrderScreen = ({ history }) => {
               <ListGroup.Item>
                 <Row>
                   <Col>Sản phẩm</Col>
-                  <Col>{cart.itemsPrice}đ</Col>
+                  <Col>{cart.itemsPrice}₫</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Phí giao hàng</Col>
-                  <Col>{cart.shippingPrice}đ</Col>
+                  <Col>{cart.shippingPrice}₫</Col>
                 </Row>
               </ListGroup.Item>
               {/* <ListGroup.Item>
@@ -143,7 +143,7 @@ const PlaceOrderScreen = ({ history }) => {
               <ListGroup.Item>
                 <Row>
                   <Col>Tổng</Col>
-                  <Col>{cart.totalPrice}đ</Col>
+                  <Col>{cart.totalPrice}₫</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
