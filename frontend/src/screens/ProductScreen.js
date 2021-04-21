@@ -198,6 +198,7 @@ const ProductScreen = ({ history, match }) => {
                               as='textarea'
                               row='3'
                               value={comment}
+                              placeholder='Nhập bình luận'
                               onChange={(e) => setComment(e.target.value)}
                             ></Form.Control>
                           </Form.Group>
